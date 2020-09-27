@@ -46,8 +46,9 @@ Il sera plus naturel que chaque vue créée sa propre instance de stage.
 **Q1.4** Notez qu’avec une seule vue, ce patron est inutilement compliqué.
 Mais si on a plusieurs vues (par exemple un thermostat à deux extrémités d’une grande pièce), l’utilisation de Observateur/Observé prend son sens.
 
-Vous devez pouvoir rajoutez très facilement une nouvelle vue (ou 2, ou 3) en créant simplement des nouveaux objets de la classe vue (une ligne Java).
+Rajoutez maintenant une nouvelle vue (ou 2, ou 3) en créant simplement des nouveaux objets de la classe vue (une ligne Java).
 Vérifiez que toutes les vues sont toujours synchronisées (affichent la même température désirée) grâce au MVC (et aux observateurs/observé).
+On doit pouvoir aussi modifier la températureen la saisissant directement dans le champs texte (d'une des vues). Dans ce cas aussi, toutes les vues doivent se mettre à jour.
 
 *Optionel* : Créez une nouvelle vue utilisant un Slider pour afficher et modifier la température désirée.
 On peut décider que les températures sont bornées entre -10.0 ⁰C et +30.0⁰C (même pour thermostat de *geek*).
