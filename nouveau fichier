@@ -1,0 +1,65 @@
+		FlowPane root = new FlowPane();
+		Text t = new Text(" Température en degrés : ");
+		VBox vbox = new VBox(10);
+		HBox hbox = new HBox(10);
+		Button b1 = new Button("-");
+		b1.setMinSize(35.0,35.0);
+		Button b2 = new Button("+");
+		b2.setMinSize(35.0,35.0);
+		TextField textF = new TextField(thermo.getTemperature() + "");
+		Slider slider = new Slider();
+		slider.setMin(-60);
+		slider.setMax(90);
+		slider.setValue(0);
+		slider.setShowTickLabels(true);
+		slider.setShowTickMarks(true);
+		slider.setPrefWidth(300);
+		
+		textF.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				double cpt = Double.parseDouble(textF.getText());
+                slider.setValue(cpt);
+			}
+			
+			
+		});
+
+	b1.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				double cpt = Double.parseDouble(textF.getText());
+                double res = cpt - 1;
+                textF.setText(res + "");
+			}
+			
+			
+		});
+
+	b2.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				double cpt = Double.parseDouble(textF.getText());
+                double res = cpt + 1;
+                textF.setText(res + "");
+			}
+			
+			
+		});
+
+slider.valueProperty().addListener(new ChangeLuistener<Number>(){
+
+
+
+
+
+
+
+
+
+
+
+
