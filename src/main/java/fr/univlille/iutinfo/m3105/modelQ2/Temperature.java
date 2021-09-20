@@ -4,38 +4,39 @@ import fr.univlille.iutinfo.m3105.modelQ1.ITemperature;
 import fr.univlille.iutinfo.m3105.utils.ConnectableProperty;
 
 public class Temperature extends ConnectableProperty implements ITemperature {
+	
+
+	private Echelle echelle;
 
 	public Temperature(Echelle celsius) {
-		// TODO Auto-generated constructor stub
+		this.echelle = celsius;
 	}
 
 	public Echelle getEchelle() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.echelle;
 	}
 
 	@Override
 	public void setTemperature(double d) {
-		// TODO Auto-generated method stub
-		
+		this.setValue(d);
 	}
 
 	@Override
 	public Double getTemperature() {
-		// TODO Auto-generated method stub
-		return null;
+		double res = (double)this.getValue();
+		return res;
 	}
 
 	@Override
 	public void incrementTemperature() {
-		// TODO Auto-generated method stub
-		
+		double res = getTemperature();
+		this.setValue(res++);
 	}
 
 	@Override
 	public void decrementTemperature() {
-		// TODO Auto-generated method stub
-		
+		double res = getTemperature();
+		this.setValue(res--);
 	}
 
 }

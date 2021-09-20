@@ -1,29 +1,32 @@
 package fr.univlille.iutinfo.m3105.modelQ1;
 
-public class Thermogeekostat implements ITemperature {
+import fr.univlille.iutinfo.m3105.utils.Subject;
+
+public class Thermogeekostat extends Subject implements ITemperature {
+	
+	private double val;
 
 	@Override
 	public void setTemperature(double d) {
-		// TODO Auto-generated method stub
-		
+		this.val = d;
+		notifyObservers();
 	}
 
 	@Override
 	public Double getTemperature() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.val;
 	}
 
 	@Override
 	public void incrementTemperature() {
-		// TODO Auto-generated method stub
-		
+		val++;
+		notifyObservers();
 	}
 
 	@Override
 	public void decrementTemperature() {
-		// TODO Auto-generated method stub
-		
+		val--;
+		notifyObservers();
 	}
 
 }
