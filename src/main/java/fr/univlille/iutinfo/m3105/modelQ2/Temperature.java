@@ -2,6 +2,7 @@ package fr.univlille.iutinfo.m3105.modelQ2;
 
 import fr.univlille.iutinfo.m3105.modelQ1.ITemperature;
 import fr.univlille.iutinfo.m3105.utils.ConnectableProperty;
+import fr.univlille.iutinfo.m3105.utils.Subject;
 
 public class Temperature extends ConnectableProperty implements ITemperature {
 	
@@ -10,6 +11,7 @@ public class Temperature extends ConnectableProperty implements ITemperature {
 
 	public Temperature(Echelle celsius) {
 		this.echelle = celsius;
+		this.setTemperature(0.0);
 	}
 
 	public Echelle getEchelle() {
@@ -37,6 +39,12 @@ public class Temperature extends ConnectableProperty implements ITemperature {
 	public void decrementTemperature() {
 		double res = getTemperature();
 		this.setValue(res--);
+	}
+	
+	// redefinir valeur en fonction du subject Celsius to Kelvin
+	
+	public void update(Subject subj) {
+		// never called so does not do anything
 	}
 
 }
